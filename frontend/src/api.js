@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:7071/api", // <- pointe vers tes fonctions locales
+  baseURL: "https://lively-pond-070636e10.2.azurestaticapps.net/api", // <- pointe vers tes fonctions locales
 });
 
 // Créer un utilisateur
