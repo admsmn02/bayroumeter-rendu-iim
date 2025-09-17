@@ -1,0 +1,17 @@
+{
+  "name": "bayrou-api",
+  "version": "1.0.0",
+  "description": "Azure Functions API for Bayrou voting app",
+  "main": "index.js",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/cosmos": "^4.5.1",
+    "@azure/functions": "^4.0.0"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "^4.x"
+  }
+}
