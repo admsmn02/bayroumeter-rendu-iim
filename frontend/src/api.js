@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://lively-pond-070636e10.2.azurestaticapps.net/api", // <- pointe vers tes fonctions locales
+  baseURL: "/api", // Chemin relatif - Azure Static Web Apps gère le routage automatiquement
 });
 
 // Créer un utilisateur
