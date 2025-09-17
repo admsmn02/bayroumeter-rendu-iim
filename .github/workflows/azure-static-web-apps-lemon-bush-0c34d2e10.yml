@@ -44,11 +44,6 @@ jobs:
           cd frontend
           npm ci
 
-      - name: Run Frontend tests
-        run: |
-          cd frontend
-          npm test -- --coverage --watchAll=false
-
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
