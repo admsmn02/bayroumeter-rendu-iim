@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "/api", // Chemin relatif - Azure Static Web Apps gère le routage automatiquement
+  baseURL: "http://localhost:7071/api",
 });
 
 // Créer un utilisateur
