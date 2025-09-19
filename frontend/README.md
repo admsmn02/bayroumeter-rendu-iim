@@ -1,70 +1,246 @@
-# Getting Started with Create React App
+# 🗳️ BayrouMeter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Le baromètre de la nostalgie politique française**
 
-## Available Scripts
+BayrouMeter est une application web interactive permettant de sonder l'opinion publique sur François Bayrou et de visualiser les résultats en temps réel avec des graphiques dynamiques.
 
-In the project directory, you can run:
+![BayrouMeter Preview](https://img.shields.io/badge/Status-Active-brightgreen)
+![React](https://img.shields.io/badge/React-19.1.1-blue)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.5.0-orange)
 
-### `npm start`
+## ✨ Fonctionnalités
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 👤 **Système d'authentification** : Connexion simple avec pseudo et email
+- 🗳️ **Vote interactif** : Interface intuitive pour exprimer son opinion (Oui/Non)
+- 📊 **Visualisation en temps réel** : Graphiques animés (camembert et barres) avec Chart.js
+- 🎉 **Animations** : Effets de confettis lors du vote et animations arc-en-ciel
+- 📱 **Design responsive** : Interface adaptée mobile et desktop
+- 🔄 **Actualisation automatique** : Résultats mis à jour toutes les 5 secondes
+- 🎨 **Interface moderne** : Design épuré avec des micro-interactions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies utilisées
 
-### `npm test`
+### Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React 19.1.1** - Framework JavaScript
+- **Chart.js 4.5.0** - Bibliothèque de graphiques
+- **react-chartjs-2** - Intégration React pour Chart.js
+- **Axios** - Client HTTP pour les appels API
+- **CSS3** - Animations et styles personnalisés
 
-### `npm run build`
+### Tests
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **@testing-library/react** - Tests unitaires et d'intégration
+- **Jest** - Framework de tests
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Installation et démarrage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prérequis
 
-### `npm run eject`
+- Node.js (version 16 ou supérieure)
+- npm ou yarn
+- API Backend fonctionnelle
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Cloner le repository**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   git clone https://github.com/admsmn02/bayroumeter-rendu-iim.git
+   cd bayroumeter-rendu-iim/frontend
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Installer les dépendances**
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Configurer l'API**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   L'application attend une API backend accessible à `/api` avec les endpoints suivants :
 
-### Code Splitting
+   - `POST /api/user` - Création d'utilisateur
+   - `POST /api/vote` - Envoi d'un vote
+   - `GET /api/votes` - Récupération des votes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. **Démarrer l'application**
 
-### Analyzing the Bundle Size
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   L'application sera accessible sur [http://localhost:3000](http://localhost:3000)
 
-### Making a Progressive Web App
+## 📱 Utilisation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Interface utilisateur
 
-### Advanced Configuration
+1. **Page de connexion**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   - Saisir un pseudo et un email
+   - Validation côté client pour les champs obligatoires
 
-### Deployment
+2. **Page de vote**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   - Interface claire avec deux options : "Oui" ou "Non"
+   - Animation de confirmation après vote
+   - Possibilité de voter à nouveau après 3 secondes
 
-### `npm run build` fails to minify
+3. **Visualisation des résultats**
+   - Graphiques en camembert et en barres
+   - Pourcentages en temps réel
+   - Actualisation automatique toutes les 5 secondes
+   - Statistiques détaillées
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Fonctionnalités spéciales
+
+- **Easter Egg** : Cliquer sur l'avatar ou le titre pour déclencher l'effet arc-en-ciel 🌈
+- **Confettis** : Animation automatique lors de la validation d'un vote
+- **Responsive Design** : Adapté aux écrans mobiles et tablettes
+
+## 🧪 Tests
+
+Lancer les tests unitaires :
+
+```bash
+npm test
+```
+
+Lancer les tests en mode coverage :
+
+```bash
+npm test -- --coverage
+```
+
+## 🏗️ Build de production
+
+Créer une version optimisée pour la production :
+
+```bash
+npm run build
+```
+
+Les fichiers seront générés dans le dossier `build/` et prêts pour le déploiement.
+
+## 🎨 Structure du projet
+
+```
+src/
+├── components/
+│   ├── Login.js          # Composant de connexion
+│   ├── Vote.js           # Interface de vote
+│   ├── Results.js        # Affichage des résultats
+│   ├── VoteChart.js      # Graphiques Chart.js
+│   └── Confetti.js       # Animation de confettis
+├── api.js                # Configuration Axios et endpoints
+├── App.js                # Composant principal
+├── App.css               # Styles globaux
+└── index.js              # Point d'entrée React
+```
+
+## 🎯 API Endpoints
+
+L'application communique avec une API REST :
+
+### POST /api/user
+
+Création d'un nouvel utilisateur
+
+```json
+{
+  "pseudo": "string",
+  "email": "string"
+}
+```
+
+### POST /api/vote
+
+Envoi d'un vote
+
+```json
+{
+  "userId": "string",
+  "choice": "Oui" | "Non"
+}
+```
+
+### GET /api/votes
+
+Récupération de tous les votes
+
+```json
+[
+  {
+    "id": "string",
+    "userId": "string",
+    "choice": "Oui" | "Non",
+    "timestamp": "date"
+  }
+]
+```
+
+## 🎨 Personnalisation
+
+### Thème et couleurs
+
+Les variables CSS principales se trouvent dans `App.css` :
+
+- Couleur primaire : `#4299e1`
+- Couleur de succès : `#48bb78`
+- Couleurs du graphique : personnalisables dans `VoteChart.js`
+
+### Animations
+
+- **Durée des confettis** : Modifiable dans `Vote.js` (ligne `setTimeout`)
+- **Fréquence d'actualisation** : Configurable dans `Results.js` (5000ms par défaut)
+- **Animations CSS** : Définies dans `App.css`
+
+## 🔧 Configuration avancée
+
+### Variables d'environnement
+
+Créer un fichier `.env` à la racine :
+
+```
+REACT_APP_API_BASE_URL=http://localhost:7071
+REACT_APP_REFRESH_INTERVAL=5000
+```
+
+### Proxy de développement
+
+Le proxy vers l'API est configuré dans `package.json` ou via un fichier `setupProxy.js`.
+
+## 🚀 Déploiement
+
+### Build statique
+
+```bash
+npm run build
+npm install -g serve
+serve -s build -l 3000
+```
+
+## 🤝 Contribution
+
+1. Fork le projet
+2. Créer une branche feature (`git checkout -b feature/nouvelle-fonctionnalite`)
+3. Commit les changements (`git commit -m 'Ajout nouvelle fonctionnalité'`)
+4. Push vers la branche (`git push origin feature/nouvelle-fonctionnalite`)
+5. Ouvrir une Pull Request
+
+## 📝 License
+
+Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+## 👨‍💻 Auteur
+
+**Adam Simon** - Projet IIM - 2025
+
+---
+
+_BayrouMeter - Parce que même en politique, l'opinion compte ! 🗳️_
+
+```
+
+```
